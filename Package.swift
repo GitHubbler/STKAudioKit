@@ -7,7 +7,11 @@ let package = Package(
     name: "STKAudioKit",
     platforms: [.macOS(.v10_13), .iOS(.v11), .tvOS(.v11)],
     products: [.library(name: "STKAudioKit", targets: ["STKAudioKit"])],
-    dependencies: [.package(url: "https://github.com/AudioKit/AudioKit", from: "5.2.0")],
+    dependencies: [
+        //        .package(url: "https://github.com/AudioKit/AudioKit", from: "5.2.0"),
+        .package(name: "AudioKit",
+                 path: "/Users/pierre/v/SkyDrive/Git_MacFast/dev_iPhone/3rdPartyForked/AudioKit"),
+    ],
     targets: [
         .target(name: "Stk", exclude: ["LICENSE"], resources: [.copy("rawwaves")]),
         .target(name: "STKAudioKit", dependencies: ["AudioKit", "CSTKAudioKit", "Stk"]),
