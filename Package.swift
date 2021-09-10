@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -10,7 +10,8 @@ let package = Package(
     dependencies: [
         //        .package(url: "https://github.com/AudioKit/AudioKit", from: "5.2.0"),
         .package(name: "AudioKit",
-                 path: "/Users/pierre/v/SkyDrive/Git_MacFast/dev_iPhone/3rdPartyForked/AudioKit"),
+                 url: "https://github.com/GitHubbler/AudioKit.git",
+                 branch: "ts1"),
     ],
     targets: [
         .target(name: "Stk", exclude: ["LICENSE"], resources: [.copy("rawwaves")]),
